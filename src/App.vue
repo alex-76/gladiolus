@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
@@ -11,9 +10,4 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  text-align: center;
-  margin-top: 60px;
-}
-</style>
+
