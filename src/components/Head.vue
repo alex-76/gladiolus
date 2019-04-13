@@ -1,7 +1,7 @@
 <template>
-    <nav class="uk-navbar-container" uk-navbar>
+    <header>
+        <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-left">
-
             <ul class="uk-navbar-nav">
                 <li class="uk-active"><router-link class="nav-link" to="/">{{sitename}}</router-link></li>
                 <li>
@@ -9,17 +9,15 @@
                     <div class="uk-navbar-dropdown">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
                             <li class="uk-active"><a href="/form">Active</a></li>
-                            <li><a href="/test/7">Item</a></li>
                             <li><a href="#">Item</a></li>
                         </ul>
                     </div>
                 </li>
                 <li><router-link class="nav-link" to="/form">Form</router-link></li>
-                <li><router-link class="nav-link" to="/test/7">Test</router-link></li>
             </ul>
-
         </div>
     </nav>
+    </header>
 </template>
 
 <script>
@@ -34,7 +32,8 @@
 </script>
 
 <style scoped lang="scss">
-    a {
-        color: black;
+    header {
+        background: #0f7ae5;
+        padding: 20px 0;
     }
 </style>

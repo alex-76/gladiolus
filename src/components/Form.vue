@@ -1,35 +1,28 @@
 <template>
-    <div>
-        <my-header :cartItemCount="cartItemCount"></my-header>
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                Form...
-            </div><!--end of col-md-10 col-md-offset-1-->
-        </div><!--end of row-->
+    <div class="uk-container content">
+        <h1><span>{{msg}}</span></h1>
     </div>
 </template>
 
 <script>
-    import MyHeader from './Header.vue';
     export default {
         name: 'Form',
-        props: ['cartItemCount'],
+        props: [],
         data () {
             return {
-                states: {
-
-                },
-                order: {
-
-                }
+                msg: 'Form component'
             }
         },
-        components: { MyHeader },
-        methods: {
-            submitForm() {
-                alert('Submitted');
-            }
-        }
     }
 </script>
+
+<style scoped lang="scss">
+
+    h1 {
+    span {
+        color: #001fbf;
+    }
+    }
+
+</style>
 

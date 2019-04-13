@@ -1,7 +1,7 @@
 <template>
-    <div class="uk-container content">
-        <h1><span>{{msg}}</span></h1>
-    </div>
+    <footer>
+        <h1>{{msg}}</h1>
+    </footer>
 </template>
 
 <script>
@@ -9,18 +9,15 @@
         name: 'Test',
         data () {
             return {
-                msg: 'Test show component'
+                msg: 'Footer'
             }
         }
     }
 </script>
 
 <style scoped lang="scss">
-
-    h1 {
-        span {
-            color:#32d296;
-        }
+    footer {
+        background: #4675ff;
+        padding: 20px 0;
     }
-
 </style>

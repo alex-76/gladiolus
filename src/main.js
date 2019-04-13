@@ -6,6 +6,7 @@ import router from './router'
 
 require('./assets/uikit.min.css');
 require('./assets/app.css');
+require('./assets/uikit.min.js');
 
 
 Vue.config.productionTip = false;
