@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-require('./assets/uikit.min.css');
+require('./assets/css/uikit.min.css');
 require('./assets/app.css');
 
 
