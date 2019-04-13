@@ -17,7 +17,10 @@
 
 <style scoped lang="scss">
     footer {
-        background: #4675ff;
+        background: #2b9754;
         padding: 20px 0;
+        h1 {
+            color: #ffffdd;
+        }
     }
 </style>

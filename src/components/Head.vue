@@ -1,8 +1,9 @@
 <template>
     <header>
         <nav class="uk-navbar-container" uk-navbar>
-        <div class="uk-navbar-left">
+        <div class="uk-navbar-center">
             <ul class="uk-navbar-nav">
+                <li class="uk-navbar-item uk-logo"><img src="../assets/logo.png" width="50"></li>
                 <li class="uk-active"><router-link class="nav-link" to="/">Home</router-link></li>
                 <li>
                     <router-link class="nav-link" to="/about">About</router-link>
@@ -33,7 +34,24 @@
 
 <style scoped lang="scss">
     header {
-        background: #0f7ae5;
-        padding: 20px 0;
+        padding: 0;
+        margin:0;
+        .uk-navbar-container {
+            background: #2b2b2b;
+            ul {
+                li {
+                    a {
+                        color: #ffffdd;
+                    }
+                    ul {
+                        li {
+                            a {
+                                color: #2b2b2b;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 </style>
