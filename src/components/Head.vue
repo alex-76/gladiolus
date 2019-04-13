@@ -3,13 +3,13 @@
         <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-left">
             <ul class="uk-navbar-nav">
-                <li class="uk-active"><router-link class="nav-link" to="/">{{sitename}}</router-link></li>
+                <li class="uk-active"><router-link class="nav-link" to="/">Home</router-link></li>
                 <li>
-                    <a href="#">Parent</a>
+                    <router-link class="nav-link" to="/about">About</router-link>
                     <div class="uk-navbar-dropdown">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li class="uk-active"><a href="/form">Active</a></li>
-                            <li><a href="#">Item</a></li>
+                            <li><a href="javascript:(0);">Item</a></li>
+                            <li><a href="javascript:(0);">Item</a></li>
                         </ul>
                     </div>
                 </li>
@@ -22,7 +22,7 @@
 
 <script>
     export default {
-        name: 'head',
+        name: 'header',
         data () {
             return {
                 sitename: "My Alex",

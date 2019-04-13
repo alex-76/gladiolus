@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <HeadPage></HeadPage>
-    <router-view/>
+    <div class="uk-container content">
+      <router-view/>
+    </div>
     <FootPage></FootPage>
   </div>
 </template>

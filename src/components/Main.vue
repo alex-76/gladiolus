@@ -1,15 +1,15 @@
 <template>
-    <div class="uk-container content">
+    <section>
         <h1><span>{{msg}}</span></h1>
-    </div>
+    </section>
 </template>
 
 <script>
     export default {
-        name: 'Test',
+        name: 'Main',
         data () {
             return {
-                msg: 'Test show component'
+                msg: 'Home page'
             }
         }
     }
