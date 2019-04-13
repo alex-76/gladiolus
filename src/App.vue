@@ -15,9 +15,5 @@ export default {
 #app {
   text-align: center;
   margin-top: 60px;
-
 }
-  h1 {
-    color: #bf0018;
-  }
 </style>
