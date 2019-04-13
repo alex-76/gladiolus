@@ -20,4 +20,30 @@
 </template>
 
 
+<script>
+    export default {
+        name: 'my-header',
+        data () {
+            return {
+                sitename: "Vue.js Pet Depot",
+            }
+        },
+        props: ['cartItemCount'],
+        methods: {
+            showCheckout() {
+                this.$router.push({name: 'Form'});
+            }
+
+        }
+    }
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+    a {
+        text-decoration: none;
+        color: black;
+    }
+</style>
+
 

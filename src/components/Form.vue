@@ -1,28 +1,35 @@
 <template>
-    <div class="hello">
-        <h1>{{ msg }}</h1>
-        <h1><span>Chackout...</span></h1>
+    <div>
+        <my-header :cartItemCount="cartItemCount"></my-header>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                Form...
+            </div><!--end of col-md-10 col-md-offset-1-->
+        </div><!--end of row-->
     </div>
 </template>
 
 <script>
+    import MyHeader from './Header.vue';
     export default {
-        name: 'Main',
+        name: 'Form',
+        props: ['cartItemCount'],
         data () {
             return {
-                msg: 'Form block'
+                states: {
+
+                },
+                order: {
+
+                }
+            }
+        },
+        components: { MyHeader },
+        methods: {
+            submitForm() {
+                alert('Submitted');
             }
         }
     }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-
-<style lang="scss" scoped>
-    h1 {
-        color: #806d0e;
-        span {
-            color: #4675ff;
-        }
-    }
-</style>
