@@ -11,7 +11,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'iMain',
+      name: 'Main',
       component: Main,
       props: true
     },
