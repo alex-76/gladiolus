@@ -39,8 +39,7 @@
             axios.get(' /static/products.json')
                 .then((response) =>{
                     this.products = response.data.products.filter(
-                        data => data.id == this.$route.params.id)[0];
-           });
+                    data => data.id == this.$route.params.id)[0];});
         },
     }
 </script>
