@@ -41,6 +41,10 @@ export default new Router({
       component: ProductSingle,
       props: true
     },
+    {
+      path: '*',
+      redirect:"/"
+    }
 
 
   ]
