@@ -46,7 +46,7 @@
                 .then((response) =>{
                     this.products = response.data.products;
                     console.log(response.data.products);
-                });
+            });
         },
     }
 </script>
