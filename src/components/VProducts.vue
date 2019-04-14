@@ -1,7 +1,7 @@
 <template>
     <section>
         <h1>
-            <span uk-icon="icon: check"></span>
+            <span uk-icon="icon:cart"></span>
             <span>{{msg}}</span>
         </h1>
         <div v-for="product in products">
@@ -36,13 +36,13 @@
         name: 'VProduct',
         data () {
             return {
-                msg: 'Product',
+                msg: 'List of product in shop',
                 products: [],
             }
         },
         methods: {
-            checkRating(n, myProduct) {
-                return myProduct.rating - n >= 0;
+            checkRating(n, Product) {
+                return Product.rating - n >= 0;
             },
         },
         created: function() {
