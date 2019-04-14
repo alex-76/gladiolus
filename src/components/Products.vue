@@ -8,7 +8,7 @@
         <div class="uk-child-width-1-2 uk-flex uk-flex-top" uk-grid>
             <div class="uk-width-auto">
                 <figure>
-                    <img :src="product.image" width="300">
+                    <img :src="product.image" width="200">
                 </figure>
             </div>
             <div class="uk-margin-left">
