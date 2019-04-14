@@ -6,21 +6,23 @@
 
 <script>
     export default {
-        name: 'About',
+        name: 'VForm',
+        props: [],
         data () {
             return {
-                msg: 'About page'
+                msg: 'Form page'
             }
-        }
+        },
     }
 </script>
 
 <style scoped lang="scss">
 
     h1 {
-        span {
-            color:#32d296;
-        }
+    span {
+        color: #001fbf;
+    }
     }
 
 </style>
+

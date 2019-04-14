@@ -14,7 +14,7 @@
 
 <script>
     export default {
-        name: 'Main',
+        name: 'VMain',
         data () {
             return {
                 msg: 'Home page',

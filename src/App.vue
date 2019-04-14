@@ -9,8 +9,8 @@
 </template>
 
 <script>
-    import HeadPage from './components/Head.vue'
-    import FootPage from './components/Footer.vue'
+    import HeadPage from './components/VHead.vue'
+    import FootPage from './components/VFooter.vue'
     export default {
         name: 'App',
         components: { HeadPage, FootPage },

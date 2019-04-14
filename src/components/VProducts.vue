@@ -12,7 +12,9 @@
                 </figure>
             </div>
             <div class="uk-margin-left">
-                <h4>{{ product.title }}</h4>
+                <h4>
+                    <router-link :to="{name: 'productItem', params: {id: product.id}}" class="nav-link">{{ product.title }}</router-link>
+                </h4>
                 <p v-html="product.description"></p>
                 <p>Price: {{ product.price}}<p/>
                 <div class="rating">
@@ -29,7 +31,7 @@
 <script>
     import axios from 'axios'
     export default {
-        name: 'Product',
+        name: 'VProduct',
         data () {
             return {
                 msg: 'Product',

@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Form from '@/components/Form'
-import Main from '@/components/Main'
-import About from '@/components/About'
-import Product from '@/components/Products'
+import Form from '@/components/VForm'
+import Main from '@/components/VMain'
+import About from '@/components/VAbout'
+import Product from '@/components/VProducts'
+import ProductSingle from '@/components/VProductSingle'
 
 Vue.use(Router);
 
@@ -18,22 +19,30 @@ export default new Router({
     },
     {
       path: '/form',
-      name: 'Form',
+      name: 'form',
       component: Form,
       props: true
     },
     {
       path: '/about',
-      name: 'About',
+      name: 'about',
       component: About,
       props: true
     },
     {
       path: '/product',
-      name: 'Product',
+      name: 'product',
       component: Product,
       props: true
     },
+    {
+      path: '/productItem/:id',
+      name: 'productItem',
+      component: ProductSingle,
+      props: true
+    },
+
+
   ]
 })
 

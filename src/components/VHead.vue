@@ -24,7 +24,7 @@
 
 <script>
     export default {
-        name: 'header',
+        name: 'VHeader',
         data () {
             return {
                 sitename: "My Alex",
