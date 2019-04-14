@@ -5,7 +5,7 @@
           "title": "Use bag",
           "description": "А 25 pound bag of <em>irresistiЬle</em>, <b>organic goodness for your cat.</b>",
           "price": 2000,
-          "image": "assets/images/product.png",
+          "image": "http://vue/src/assets/images/product.png",
           "availableinventory": 7,
           "rating": 4
         },
@@ -14,7 +14,7 @@
           "title": "Food duck",
           "description": "А 25 pound bag of <em>irresistiЬle</em>, <b>organic goodness for your cat.</b>",
           "price": 750,
-          "image": "assets/images/product.png",
+          "image": "http://vue/src/assets/images/product.png",
           "availableinventory": 3,
           "rating": 3
         },
@@ -23,7 +23,7 @@
           "title": "Home apale",
           "description": "А 25 pound bag of <em>irresistiЬle</em>, <b>organic goodness for your cat.</b>",
           "price": 1000,
-          "image": "assets/images/product.png",
+          "image": "http://vue/src/assets/images/product.png",
           "availableinventory": 10,
           "rating": 2
         },
@@ -32,7 +32,7 @@
       "title": "Task soop",
       "description": "А 25 pound bag of <em>irresistiЬle</em>, <b>organic goodness for your cat.</b>",
       "price": 70.55,
-      "image": "assets/images/product.png",
+      "image": "http://vue/src/assets/images/product.png",
       "availableinventory": 3,
       "rating": 1
     }

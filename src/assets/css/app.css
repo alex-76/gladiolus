@@ -9,4 +9,9 @@ section {
 }
 
 
+div.rating span.rating-active small svg polygon {
+    fill: #001fbf;
+}
+
+
 

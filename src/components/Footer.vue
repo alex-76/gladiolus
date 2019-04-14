@@ -1,6 +1,17 @@
 <template>
     <footer>
-        <h1>{{msg}}</h1>
+        <div class="uk-container">
+            <nav class="uk-navbar-container" uk-navbar>
+                <div class="uk-navbar-center">
+                    <ul class="uk-navbar-nav">
+                        <li class="uk-active"><router-link class="nav-link" to="/">Home</router-link></li>
+                        <li class="uk-active"><router-link class="nav-link" to="/about">About</router-link></li>
+                        <li class="uk-active"><router-link class="nav-link" to="/product">Product</router-link></li>
+                        <li class="uk-active"><router-link class="nav-link" to="/form">Form</router-link></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </footer>
 </template>
 
@@ -19,8 +30,16 @@
     footer {
         background: #2b9754;
         padding: 20px 0;
-        h1 {
-            color: #ffffdd;
+        nav.uk-navbar {
+            background: none;
+            ul {
+               li {
+                   a {
+                       color:#FFFFFF;
+                   }
+               }
+            }
         }
     }
+
 </style>
