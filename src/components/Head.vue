@@ -3,7 +3,7 @@
         <nav class="uk-navbar-container" uk-navbar>
         <div class="uk-navbar-center">
             <ul class="uk-navbar-nav">
-                <li class="uk-navbar-item uk-logo"><img src="../assets/logo.png" width="50"></li>
+                <li class="uk-navbar-item uk-logo"><img src="../assets/images/logo.png" width="50"></li>
                 <li class="uk-active"><router-link class="nav-link" to="/">Home</router-link></li>
                 <li>
                     <router-link class="nav-link" to="/about">About</router-link>
@@ -14,6 +14,7 @@
                         </ul>
                     </div>
                 </li>
+                <li><router-link class="nav-link" to="/product">Products</router-link></li>
                 <li><router-link class="nav-link" to="/form">Form</router-link></li>
             </ul>
         </div>

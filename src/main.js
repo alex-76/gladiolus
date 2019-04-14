@@ -2,12 +2,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-require('./assets/uikit.min.css');
-require('./assets/app.css');
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
+UIkit.use(Icons);
 
 Vue.config.productionTip = false;
 
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,

@@ -17,4 +17,9 @@
     }
 </script>
 
+<style>
+  @import "/assets/css/uikit.min.css";
+  @import "/assets/css/app.css";
+</style>
+
 

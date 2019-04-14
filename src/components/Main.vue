@@ -1,34 +1,25 @@
 <template>
     <section>
         <h1><span>{{msg}}</span></h1>
-        <ul class="uk-list">
-            <li v-for="product in products">
-                <h4>{{ product.title }}</h4>
-                <p v-html="product.description"></p>
-                <p>Price: {{ product.price}}<p/>
-                <small uk-icon="star"></small>
-            </li>
-        </ul>
+        <p class="uk-align-left">
+            Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев
+            более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить
+            навык публичных выступлений в домашних условиях. При создании генератора мы использовали
+            небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от
+            двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и
+            живым для визуально-слухового восприятия.
+        </p>
     </section>
 </template>
 
 <script>
-    import axios from 'axios'
     export default {
         name: 'Main',
         data () {
             return {
                 msg: 'Home page',
-                products: [],
             }
-        },
-        created: function() {
-            axios.get(' /static/products.json')
-                .then((response) =>{
-                    this.products = response.data.products;
-                    console.log(response.data.products);
-                });
-        },
+        }
     }
 </script>
 
