@@ -2,7 +2,9 @@
   <div id="app">
     <HeadPage></HeadPage>
     <div class="uk-container content">
-      <router-view/>
+      <transition name="fade" mode="out-in">
+        <router-view/>
+      </transition>
     </div>
     <FootPage></FootPage>
   </div>

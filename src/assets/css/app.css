@@ -14,4 +14,37 @@ div.rating span.rating-active small svg polygon {
 }
 
 
+/*** Animation ***/
+.fade-enter-active {
+    transition: opacity .7s ease-out, color .3s linear;
+    color: #16994d;
+}
+.fade-enter, .fade-leave-to  {
+    opacity: 0;
+}
+
+
+/*.fade-enter-active {
+     animation: fadeIn 2s;
+ }
+.fade-leave-active {
+    animation: fadeIn 2s reverse;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+        color: #e0e0e0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+        color: #959595;
+    }
+    100% {
+        transform: scale(1);
+        color: #393939;
+    }
+}*/
 
