@@ -16,6 +16,7 @@
                 </li>
                 <li><router-link class="nav-link" to="/product">Products</router-link></li>
                 <li><router-link class="nav-link" to="/form">Form</router-link></li>
+                <li><router-link class="nav-link" to="/training">Training</router-link></li>
             </ul>
         </div>
     </nav>

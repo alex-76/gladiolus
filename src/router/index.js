@@ -5,6 +5,8 @@ import Main from '@/components/VMain'
 import About from '@/components/VAbout'
 import Product from '@/components/VProducts'
 import ProductSingle from '@/components/VProductSingle'
+import StartScreen from '@/components/training/VStartScreen'
+import Questing from '@/components/training/VQuesting'
 
 Vue.use(Router);
 
@@ -39,6 +41,18 @@ export default new Router({
       path: '/productItem/:id',
       name: 'productItem',
       component: ProductSingle,
+      props: true
+    },
+    {
+      path: '/training',
+      name: 'StartScreen',
+      component: StartScreen,
+      props: true
+    },
+    {
+      path: '/questing',
+      name: 'Questing',
+      component: Questing,
       props: true
     },
     {
