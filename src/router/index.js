@@ -7,6 +7,7 @@ import Product from '@/components/VProducts'
 import ProductSingle from '@/components/VProductSingle'
 import StartScreen from '@/components/training/VStartScreen'
 import Questing from '@/components/training/VQuesting'
+import Result from '@/components/training/VResultScreen'
 
 Vue.use(Router);
 
@@ -53,6 +54,12 @@ export default new Router({
       path: '/questing',
       name: 'Questing',
       component: Questing,
+      props: true
+    },
+    {
+      path: '/result',
+      name: 'Result',
+      component: Result,
       props: true
     },
     {
