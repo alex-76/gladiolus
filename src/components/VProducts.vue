@@ -14,7 +14,7 @@
             <div class="uk-margin-left">
                 <h4>
                     <router-link :to="{name: 'productItem', params: {id: product.id}}"
-                                 class="nav-link">{{ product.title }}
+                                               class="nav-link">{{ product.title }}
                     </router-link>
                 </h4>
                 <p v-html="product.description"></p>

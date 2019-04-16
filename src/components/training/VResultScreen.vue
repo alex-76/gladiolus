@@ -6,7 +6,7 @@
         <h3>Error:   {{this.$route.params.e}}</h3>
         <hr class="uk-divider-icon">
         <template v-if="this.$route.params.s == 0">
-            <h4 class="uk-text-danger">Ты полный лох!!! Иди учисьб студент...!!!</h4>
+            <h4 class="uk-text-danger">Ты полный лох!!! Иди учись студент...!!!</h4>
         </template>
         <template v-else-if="this.$route.params.e == 0">
             <h4 class="uk-text-success">Ты вундеркинд, парень! Сразимся еще?</h4>

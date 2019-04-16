@@ -3,8 +3,7 @@
         <h2>Questing</h2>
         <div>
            <progress class="uk-progress" :value="progressCurrent" max="100"></progress>
-            <h4>Time: 00:07</h4>
-            <button @click="onTimer" class="uk-button uk-button-default">Start</button>
+            <h2 class="uk-align-center" v-show="toggle">Time: 00:0{{sec}}</h2>
            <template v-if="toggle">
                 <h3>{{x}} + {{y}} = ?</h3>
                 <hr>
@@ -41,6 +40,9 @@
                 x : mtRand(100,200),
                 y : mtRand(100,200),
                 toggle: true,
+                sec : 5,
+                timerId : null,
+                count : 4,
                 message: {
                     text:'',
                     type:''
@@ -78,29 +80,36 @@
         },
         methods: {
             onTimer() {
-                let timer = 3;
-                var timerId = setInterval(function() {
-                    console.log(timer--);
 
-                    if(timer == 0) {
+                let obj = this;
 
-                        clearInterval(timerId);
+                this.timerId = setInterval(function() {
+
+                    if(obj.count == 0) {
+                        clearInterval(obj.timerId);
+                        obj.toggle = false;
+                        obj.message.text = 'Не успел! Ха-ха...!'
+                        obj.message.type = 'danger';
                     }
-                    timer--;
-                    this.toggle = false;
+                    console.log(obj.count);
+                    obj.count--;
+                    obj.sec--;
                 }, 1000);
 
             },
+
             onAnswer(num){
                if(num == this.good) {
                     this.message.text = 'Good Job!';
                     this.message.type = 'success';
                     this.status.success++;
+                    clearInterval(this.timerId);
                }
                else {
                    this.message.text = this.x + ' + '+this.y + '=' + this.good+'!';
                    this.message.type = 'danger';
                    this.status.error++;
+                   clearInterval(this.timerId);
                }
                 this.toggle = false;
             },
@@ -109,12 +118,22 @@
                     this.x = mtRand(100,200);
                     this.y = mtRand(100,200);
                     this.toggle = true;
+                    this.status.error++;
+                    this.sec = 5;
+                    this.count = 4;
+                    this.onTimer();
                 } else {
                     this.$router.push({ name: 'result', params: { s: this.status.success, e: this.status.error } });
                 }
             }
+        },
+        created: function () {
+            this.onTimer();
         }
     }
+
+
+
     function mtRand(min, max) {
         let diff = max - min;
         return Math.floor(Math.random() * (diff + 1)) + min;
@@ -128,5 +147,8 @@
     }
     .uk-progress {
         transition: width 5s linear;
+    }
+    .uk-align-center {
+        text-align: center;
     }
 </style>
