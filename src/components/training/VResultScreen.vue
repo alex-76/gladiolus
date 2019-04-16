@@ -5,21 +5,20 @@
         <h3>Seccuss: {{this.$route.params.s}}</h3>
         <h3>Error:   {{this.$route.params.e}}</h3>
         <hr class="uk-divider-icon">
-        <temlate v-if="this.$route.params.s == 0">
+        <template v-if="this.$route.params.s == 0">
             <h4 class="uk-text-danger">Ты полный лох!!! Иди учисьб студент...!!!</h4>
-        </temlate>
-        <temlate v-else-if="this.$route.params.e == 0">
+        </template>
+        <template v-else-if="this.$route.params.e == 0">
             <h4 class="uk-text-success">Ты вундеркинд, парень! Сразимся еще?</h4>
-        </temlate>
-        <temlate v-else>
+        </template>
+        <template v-else>
             <h4 class="uk-text-warning">Нужно подучиться еще...</h4>
-        </temlate>
+        </template>
         <hr class="uk-divider-icon">
         <router-link tag="a" class="uk-button uk-button-danger" to="/questing">Repeat</router-link>
         <button class="uk-button uk-button-primary" @click="msg">Next level</button>
         <p class="uk-text-warning" v-show="status">{{text}}</p>
     </div>
-
 </template>
 
 <script>

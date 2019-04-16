@@ -3,6 +3,8 @@
         <h2>Questing</h2>
         <div>
            <progress class="uk-progress" :value="progressCurrent" max="100"></progress>
+            <h4>Time: 00:07</h4>
+            <button @click="onTimer" class="uk-button uk-button-default">Start</button>
            <template v-if="toggle">
                 <h3>{{x}} + {{y}} = ?</h3>
                 <hr>
@@ -75,6 +77,20 @@
             }
         },
         methods: {
+            onTimer() {
+                let timer = 3;
+                var timerId = setInterval(function() {
+                    console.log(timer--);
+
+                    if(timer == 0) {
+
+                        clearInterval(timerId);
+                    }
+                    timer--;
+                    this.toggle = false;
+                }, 1000);
+
+            },
             onAnswer(num){
                if(num == this.good) {
                     this.message.text = 'Good Job!';
@@ -96,7 +112,6 @@
                 } else {
                     this.$router.push({ name: 'result', params: { s: this.status.success, e: this.status.error } });
                 }
-
             }
         }
     }
