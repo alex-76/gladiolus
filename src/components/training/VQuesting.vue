@@ -63,8 +63,8 @@
                         res.push(num);
                     }
                 }
-                return res.sort(function () {
-                    return Math.random() > 0.5;
+                return res.sort(function() {
+                    return Math.random() - 0.5;
                 });
             },
             questDone() {
@@ -102,9 +102,9 @@
     }
     function mtRand(min, max) {
         let diff = max - min;
-        return Math.floor(Math.random() * (diff + 1) + min);
-        
+        return Math.floor(Math.random() * (diff + 1)) + min;
     }
+
 </script>
 
 <style scoped>
