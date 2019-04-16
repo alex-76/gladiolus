@@ -3,7 +3,7 @@
         <h2>Questing</h2>
         <div>
            <progress class="uk-progress" :value="progressCurrent" max="100"></progress>
-           <template v-if="result">
+           <template v-if="toggle">
                 <h3>{{x}} + {{y}} = ?</h3>
                 <hr>
                 <div class="uk-button uk-button-primary uk-margin-right"
@@ -28,7 +28,8 @@
 </template>
 
 <script>
-    import Message from './VMessage.vue'
+    import Message from './VMessage.vue';
+
     export default {
         name: 'VQuesting',
         components: { Message },
@@ -37,7 +38,7 @@
             return {
                 x : mtRand(100,200),
                 y : mtRand(100,200),
-                result: true,
+                toggle: true,
                 message: {
                     text:'',
                     type:''
@@ -46,7 +47,7 @@
                     success:0,
                     error:0
                 },
-                questMax: 3,
+                questMax: 5,
             }
         },
         computed:{
@@ -55,7 +56,7 @@
             },
             answers() {
                 let res = [this.good];
-                while (res.length < 4) {
+                while (res.length < 7) {
                     let num = mtRand(this.good - 20, this.good + 20);
 
                     if(res.indexOf(num) === -1) {
@@ -78,23 +79,22 @@
                if(num == this.good) {
                     this.message.text = 'Good Job!';
                     this.message.type = 'success';
-                   this.status.success++;
-                    this.result = false;
+                    this.status.success++;
                }
                else {
                    this.message.text = this.x + ' + '+this.y + '=' + this.good+'!';
                    this.message.type = 'danger';
                    this.status.error++;
-                   this.result = false;
                }
+                this.toggle = false;
             },
             onReload() {
                 if(this.questDone < this.questMax) {
                     this.x = mtRand(100,200);
                     this.y = mtRand(100,200);
-                    this.result = true;
+                    this.toggle = true;
                 } else {
-                    this.$router.push('/result')
+                    this.$router.push({ name: 'result', params: { s: this.status.success, e: this.status.error } });
                 }
 
             }

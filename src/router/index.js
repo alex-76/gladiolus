@@ -46,19 +46,19 @@ export default new Router({
     },
     {
       path: '/training',
-      name: 'StartScreen',
+      name: 'startScreen',
       component: StartScreen,
       props: true
     },
     {
       path: '/questing',
-      name: 'Questing',
+      name: 'questing',
       component: Questing,
       props: true
     },
     {
-      path: '/result',
-      name: 'Result',
+      path: '/result/:s/:e',
+      name: 'result',
       component: Result,
       props: true
     },
