@@ -1,0 +1,32 @@
+GET https://api.github.com/search/repositories?q=tetris&language=assembly
+Cache-Control: no-cache
+Accept: application/vnd.github.mercy-preview+json
+
+<> 2019-04-17T065719.200.json
+
+###
+
+GET https://api.github.com/search/repositories?q=tetris
+Cache-Control: no-cache
+Accept: application/vnd.github.mercy-preview+json
+
+<> 2019-04-17T065629.200.json
+
+###
+
+GET https://api.github.com/search/repositories
+Cache-Control: no-cache
+Accept: application/vnd.github.mercy-preview+json
+
+<> 2019-04-17T065556.422.json
+
+###
+
+GET https://github.com/search/repositories
+Cache-Control: no-cache
+Accept: application/vnd.github.mercy-preview+json
+
+<> 2019-04-17T065410.404.txt
+
+###
+

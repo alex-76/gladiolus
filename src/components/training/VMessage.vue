@@ -1,6 +1,6 @@
 <template>
-    <div class="alert message" :class="'uk-alert-'+type" uk-alert>
-        <h3>{{text}}</h3>
+    <div class="alert uk-align-center uk-padding message" :class="'uk-alert-'+type" uk-alert>
+        <h3 class="">{{text}}</h3>
     </div>
 
 </template>
@@ -16,5 +16,12 @@
 <style scoped>
     .uk-alert {
         padding: 30px;
+    }
+    h3 {
+        color: #2b2b2b;
+        font-size: 36px;
+    }
+    .message {
+        background-color: rgba(191, 0, 24, 0.59);
     }
 </style>

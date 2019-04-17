@@ -8,7 +8,7 @@
             <transition name="slide-fade" mode="out-in">
 
                 <div v-if="toggle" key="bq1">
-                    <h3 class="uk-alert-success uk-padding">{{x}} + {{y}} = ?</h3>
+                    <h3 class="uk-alert-success uk-padding uk-align-center">{{x}} + {{y}} = ?</h3>
                     <hr>
                     <div class="uk-button uk-button-primary uk-margin-right"
                          v-for="number in answers"
@@ -84,7 +84,6 @@
                     error:0
                 },
                 questMax: 5,
-                show: true
             }
         },
         computed:{
@@ -177,6 +176,7 @@
 </script>
 
 <style scoped>
+
     .uk-container {
         padding: 20px;
     }
@@ -185,6 +185,11 @@
     }
     .uk-align-center {
         text-align: center;
+    }
+    h3.uk-alert-success {
+        background-color: #2b9754;
+        color: #2b2b2b;
+        font-size: 36px;
     }
 
     .fade-enter-active {
