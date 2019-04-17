@@ -1,6 +1,6 @@
 <template>
     <div class="alert uk-align-center uk-padding message" :class="'uk-alert-'+type" uk-alert>
-        <h3 class="">{{text}}</h3>
+        <h3>{{text}}</h3>
     </div>
 
 </template>
