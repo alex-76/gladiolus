@@ -2,7 +2,6 @@
     <div class="uk-container">
         <h2>Questing: ({{questMax}} / {{status.success + status.error }})</h2>
         <div>
-
            <progress class="uk-progress" :value="progressCurrent" max="100"></progress>
             <h2 class="uk-align-center">Time: 00:0{{maxsec}}</h2>
 
