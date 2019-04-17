@@ -1,29 +1,31 @@
 <template>
     <div class="uk-container">
-        <h2>Questing</h2>
+        <h2>Questing: ({{questMax}} / {{status.success + status.error }})</h2>
         <div>
            <progress class="uk-progress" :value="progressCurrent" max="100"></progress>
-            <h2 class="uk-align-center" v-show="toggle">Time: 00:0{{sec}}</h2>
-           <template v-if="toggle">
-                <h3>{{x}} + {{y}} = ?</h3>
-                <hr>
-                <div class="uk-button uk-button-primary uk-margin-right"
-                     v-for="number in answers"
-                     @click="onAnswer(number)"
-                >{{number}}
-                </div>
-            </template>
-            <template v-else>
-                <message
-                        :text="message.text"
-                        :type="message.type"
-                >
-                </message>
-                <div class="uk-button uk-button-primary" @click="onReload">
-                    <span class="uk-margin-small-right" uk-icon="icon: check; ratio: 1"></span>
-                    Continue
-                </div>
-            </template>
+            <h2 class="uk-align-center" v-show="toggle">Time: 00:0{{maxsec}}</h2>
+
+                <template v-if="toggle">
+                    <h3>{{x}} + {{y}} = ?</h3>
+                    <hr>
+                    <div class="uk-button uk-button-primary uk-margin-right"
+                         v-for="number in answers"
+                         @click="onAnswer(number)"
+                    >{{number}}
+                    </div>
+                </template>
+                <template v-else>
+                    <message
+                            :text="message.text"
+                            :type="message.type"
+                    >
+                    </message>
+                    <div class="uk-button uk-button-primary" @click="onReload">
+                        <span class="uk-margin-small-right" uk-icon="icon: check; ratio: 1"></span>
+                        Continue
+                    </div>
+                </template>
+
         </div>
     </div>
 </template>
@@ -40,9 +42,8 @@
                 x : mtRand(100,200),
                 y : mtRand(100,200),
                 toggle: true,
-                sec : 5,
+                maxsec : 7,
                 timerId : null,
-                count : 4,
                 message: {
                     text:'',
                     type:''
@@ -60,7 +61,7 @@
             },
             answers() {
                 let res = [this.good];
-                while (res.length < 7) {
+                while (res.length < 9) {
                     let num = mtRand(this.good - 20, this.good + 20);
 
                     if(res.indexOf(num) === -1) {
@@ -80,22 +81,22 @@
         },
         methods: {
             onTimer() {
-
                 let obj = this;
-
                 this.timerId = setInterval(function() {
 
-                    if(obj.count == 0) {
-                        clearInterval(obj.timerId);
+                    if(obj.maxsec == 0) {
                         obj.toggle = false;
-                        obj.message.text = 'Не успел! Ха-ха...!'
+                        obj.status.error++;
+                        obj.maxsec = 0;
+                        obj.message.text = 'Ой, не успел! Попробуй еще...!';
                         obj.message.type = 'danger';
+                        clearInterval(obj.timerId);
+                    } else {
+                        obj.maxsec--;
+                        console.log('con: '+obj.maxsec);
                     }
-                    console.log(obj.count);
-                    obj.count--;
-                    obj.sec--;
-                }, 1000);
 
+                }, 1000);
             },
 
             onAnswer(num){
@@ -106,7 +107,7 @@
                     clearInterval(this.timerId);
                }
                else {
-                   this.message.text = this.x + ' + '+this.y + '=' + this.good+'!';
+                   this.message.text = 'Error: '+this.x + ' + '+this.y + '=' + this.good;
                    this.message.type = 'danger';
                    this.status.error++;
                    clearInterval(this.timerId);
@@ -118,9 +119,7 @@
                     this.x = mtRand(100,200);
                     this.y = mtRand(100,200);
                     this.toggle = true;
-                    this.status.error++;
-                    this.sec = 5;
-                    this.count = 4;
+                    this.maxsec = 7;
                     this.onTimer();
                 } else {
                     this.$router.push({ name: 'result', params: { s: this.status.success, e: this.status.error } });
@@ -150,5 +149,29 @@
     }
     .uk-align-center {
         text-align: center;
+    }
+
+    .fade-enter-active {
+        animation: fadeIn 1.5s;
+    }
+    .fade-leave-active {
+        animation: fadeIn 1.5s reverse;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            transform: scale(0.1);
+            opacity: 0;
+            color: #e0e0e0;
+        }
+        50% {
+            transform: scale(1);
+            opacity: 1;
+            color: #959595;
+        }
+        100% {
+            transform: scale(1);
+            color: #393939;
+        }
     }
 </style>
