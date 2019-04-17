@@ -165,7 +165,7 @@
             }
         },
         created: function () {
-            //this.onTimer();
+            this.onTimer();
         }
     }
 
