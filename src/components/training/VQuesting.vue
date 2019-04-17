@@ -15,15 +15,25 @@
                     </div>
                 </template>
                 <template v-else>
-                    <message
-                            :text="message.text"
-                            :type="message.type"
-                    >
-                    </message>
-                    <div class="uk-button uk-button-primary" @click="onReload">
-                        <span class="uk-margin-small-right" uk-icon="icon: check; ratio: 1"></span>
-                        Continue
-                    </div>
+                    <template v-if="resScreen">
+                        <message
+                                :text="message.text"
+                                :type="message.type"
+                        >
+                        </message>
+                        <div class="uk-button uk-button-primary" @click="onReload">
+                            <span class="uk-margin-small-right" uk-icon="icon: check; ratio: 1"></span>
+                            <span v-html="btnValue"></span>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <result
+                                :success="status.success"
+                                :error="status.error"
+
+                        >
+                        </result>
+                    </template>
                 </template>
 
         </div>
@@ -34,11 +44,23 @@
 
 <script>
     import Message from './VMessage.vue';
+    import Result from './VResultScreen.vue';
 
     export default {
         name: 'VQuesting',
-        components: { Message },
+        components: { Message, Result },
         props: [],
+        metaInfo: {
+            title: 'Training Math',
+            titleTemplate: '%s | WHA!',
+            meta: [
+                { vmid: 'description', name: 'description', content: 'Training' },
+                { vmid: 'keyword', name: 'keyword', content: 'Keyword VueJS' },
+            ],
+            htmlAttrs: {
+                lang: 'en'
+            }
+        },
         data () {
             return {
                 x : mtRand(100,200),
@@ -46,6 +68,8 @@
                 toggle: true,
                 maxsec : 7,
                 timerId : null,
+                btnValue :'Continue',
+                resScreen: true,
                 message: {
                     text:'',
                     type:''
@@ -95,7 +119,7 @@
                         clearInterval(obj.timerId);
                     } else {
                         obj.maxsec--;
-                        console.log('con: '+obj.maxsec);
+                        console.log('sec: '+obj.maxsec);
                     }
 
                 }, 1000);
@@ -115,6 +139,10 @@
                    clearInterval(this.timerId);
                }
                 this.toggle = false;
+
+                if(this.questDone == this.questMax) {
+                    this.btnValue = 'Finish';
+                }
             },
             onReload() {
                 if(this.questDone < this.questMax) {
@@ -124,7 +152,9 @@
                     this.maxsec = 7;
                     this.onTimer();
                 } else {
-                    this.$router.push({ name: 'result', params: { s: this.status.success, e: this.status.error } });
+                    console.log('f: '+this.questDone);
+                    this.resScreen = false;
+                    //this.$router.push({ name: 'result', params: { s: this.status.success, e: this.status.error } });
                 }
             }
         },
@@ -132,8 +162,6 @@
             this.onTimer();
         }
     }
-
-
 
     function mtRand(min, max) {
         let diff = max - min;

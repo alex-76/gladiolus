@@ -2,20 +2,20 @@
     <div class="res">
         <h2>Result training:</h2>
         <hr>
-        <h3>Seccuss: {{this.$route.params.s}}</h3>
-        <h3>Error:   {{this.$route.params.e}}</h3>
+        <h3>Seccuss: {{success}}</h3>
+        <h3>Error:   {{error}}</h3>
         <hr class="uk-divider-icon">
-        <template v-if="this.$route.params.s == 0">
+        <template v-if="success == 0">
             <h4 class="uk-text-danger">Ты полный лох!!! Иди учись студент...!!!</h4>
         </template>
-        <template v-else-if="this.$route.params.e == 0">
+        <template v-else-if="error == 0">
             <h4 class="uk-text-success">Ты вундеркинд, парень! Сразимся еще?</h4>
         </template>
         <template v-else>
             <h4 class="uk-text-warning">Нужно подучиться еще...</h4>
         </template>
         <hr class="uk-divider-icon">
-        <router-link tag="a" class="uk-button uk-button-danger" to="/questing">Repeat</router-link>
+        <router-link tag="a" class="uk-button uk-button-danger" to="/training">Repeat</router-link>
         <button class="uk-button uk-button-primary" @click="msg">Next level</button>
         <p class="uk-text-warning" v-show="status">{{text}}</p>
     </div>
@@ -24,7 +24,7 @@
 <script>
     export default {
         name: 'VResult',
-        props: [],
+        props: ['success','error'],
         data() {
             return {
                 status: false,
