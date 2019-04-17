@@ -2,22 +2,22 @@
     <div class="uk-container">
         <h2>Questing: ({{questMax}} / {{status.success + status.error }})</h2>
         <div>
+
            <progress class="uk-progress" :value="progressCurrent" max="100"></progress>
-            <h2 class="uk-align-center" v-show="toggle">Time: 00:0{{maxsec}}</h2>
+            <h2 class="uk-align-center">Time: 00:0{{maxsec}}</h2>
 
-            <!--<transition-group name="list" tag="p">
-                <div key="qwerty" >-->
+            <transition name="slide-fade" mode="out-in">
 
-                    <template v-if="toggle">
-                    <h3 class="uk-alert-primary uk-padding">{{x}} + {{y}} = ?</h3>
+                <div v-if="toggle" key="bq1">
+                    <h3 class="uk-alert-success uk-padding">{{x}} + {{y}} = ?</h3>
                     <hr>
                     <div class="uk-button uk-button-primary uk-margin-right"
                          v-for="number in answers"
                          @click="onAnswer(number)"
                     >{{number}}
                     </div>
-                </template>
-                    <template v-else>
+                </div>
+                <div v-else key="bq2">
                     <template v-if="resScreen">
                         <message
                                 :text="message.text"
@@ -37,12 +37,12 @@
                         >
                         </result>
                     </template>
-                </template>
+                </div>
 
-               <!-- </div>
-            </transition-group>-->
+            </transition>
 
         </div>
+
     </div>
 </template>
 
@@ -85,6 +85,7 @@
                     error:0
                 },
                 questMax: 5,
+                show: true
             }
         },
         computed:{
@@ -187,28 +188,12 @@
         text-align: center;
     }
 
-
-    /*** Animation ***/
-    .list-item {
-        display: inline-block;
-        margin-right: 10px;
-    }
-    .list-enter-active, .list-leave-active {
-        transition: all 1s;
-    }
-    .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-
     .fade-enter-active {
         animation: fadeIn 1.5s;
     }
     .fade-leave-active {
         animation: fadeIn 1.5s reverse;
     }
-
     @keyframes fadeIn {
         0% {
             transform: scale(0.1);
@@ -225,4 +210,16 @@
             color: #393939;
         }
     }
+
+
+    /*** Animation ***/
+    .slide-fade-enter-active {
+        transition: all 1s;
+    }
+    .slide-fade-enter, .slide-fade-leave-to  {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    /*** end ***/
+
 </style>

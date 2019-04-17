@@ -1,5 +1,5 @@
 <template>
-    <div class="alert" :class="'uk-alert-'+type" uk-alert>
+    <div class="alert message" :class="'uk-alert-'+type" uk-alert>
         <h3>{{text}}</h3>
     </div>
 
