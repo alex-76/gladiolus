@@ -30,6 +30,7 @@
     </div>
 </template>
 
+
 <script>
     import Message from './VMessage.vue';
 
