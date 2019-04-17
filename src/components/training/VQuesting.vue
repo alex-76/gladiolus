@@ -5,8 +5,11 @@
            <progress class="uk-progress" :value="progressCurrent" max="100"></progress>
             <h2 class="uk-align-center" v-show="toggle">Time: 00:0{{maxsec}}</h2>
 
-                <template v-if="toggle">
-                    <h3>{{x}} + {{y}} = ?</h3>
+            <!--<transition-group name="list" tag="p">
+                <div key="qwerty" >-->
+
+                    <template v-if="toggle">
+                    <h3 class="uk-alert-primary uk-padding">{{x}} + {{y}} = ?</h3>
                     <hr>
                     <div class="uk-button uk-button-primary uk-margin-right"
                          v-for="number in answers"
@@ -14,7 +17,7 @@
                     >{{number}}
                     </div>
                 </template>
-                <template v-else>
+                    <template v-else>
                     <template v-if="resScreen">
                         <message
                                 :text="message.text"
@@ -35,6 +38,9 @@
                         </result>
                     </template>
                 </template>
+
+               <!-- </div>
+            </transition-group>-->
 
         </div>
     </div>
@@ -159,7 +165,7 @@
             }
         },
         created: function () {
-            this.onTimer();
+            //this.onTimer();
         }
     }
 
@@ -180,6 +186,21 @@
     .uk-align-center {
         text-align: center;
     }
+
+
+    /*** Animation ***/
+    .list-item {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .list-enter-active, .list-leave-active {
+        transition: all 1s;
+    }
+    .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
 
     .fade-enter-active {
         animation: fadeIn 1.5s;
