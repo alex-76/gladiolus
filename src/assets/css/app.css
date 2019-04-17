@@ -25,10 +25,10 @@ div.rating span.rating-active small svg polygon {
 
 
 /*.fade-enter-active {
-     animation: fadeIn 2s;
+     animation: fadeIn .7s;
  }
 .fade-leave-active {
-    animation: fadeIn 2s reverse;
+    animation: fadeIn .7s reverse;
 }
 
 @keyframes fadeIn {

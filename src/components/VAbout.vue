@@ -15,6 +15,19 @@
 <script>
     export default {
         name: 'VAbout',
+        metaInfo: {
+            title: 'About Us',
+            titleTemplate: '%s | WHA!',
+            charset: 'utf-8',
+            meta: [
+                { vmid: 'description', name: 'description', content: 'Vue App' },
+                { vmid: 'keyword', name: 'keyword', content: 'Keyword Vue App' },
+            ],
+            htmlAttrs: {
+                lang: 'en',
+                amp: undefined // "amp" has no value
+            }
+        },
         data () {
             return {
                 msg: 'About page'
