@@ -1,6 +1,6 @@
 # develop
 
-> A Vue.js project
+> A Vue.js project Training game
 
 ## Build Setup
 
